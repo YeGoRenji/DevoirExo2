@@ -18,27 +18,6 @@ let G;
 let F;
 let de = 10;
 
-function distance(p1, p2) {
-  return sqrt(pow(p1.x - p2.x, 2) + pow(p1.y - p2.y, 2));
-}
-
-function ProdScal(v1, v2) {
-  return v1.x * v2.x + v1.y * v2.y;
-}
-
-function Colineaires(p1, p2, p3) {
-  let v1 = new Vecteur(p2.x - p1.x, p2.y - p1.y),
-    v2 = new Vecteur(p3.x - p2.x, p3.y - p2.y);
-
-  let ps = ProdScal(v1, v2);
-
-  let mv1xmv2 = distance(p1, p2) * distance(p2, p3);
-
-  // On compare le produit scalaire avec le produit des modules des deux vecteurs
-  if (ps === mv1xmv2 || ps === -mv1xmv2) return true;
-  else return false;
-}
-
 function tracerSchema(Z, Q, r) {
   //A B C D
   strokeWeight(10);
